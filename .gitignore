@@ -1,0 +1,46 @@
+# --- Python & Environments ---
+# Ignores bytecode and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+.env
+
+# --- Build & Distribution ---
+# Ignores packaging files you don't need for deployment
+build/
+dist/
+wheels/
+*.egg-info
+
+# --- Machine Learning Data (The "Clean Repo" Rules) ---
+# 1. Ignore the giant raw data folder
+data/
+
+# 2. Ignore all CSV files (intermediate training/split data)
+*.csv
+
+# 3. Ignore sample test data
+test_data.csv
+
+# 4. Ignore tiny patient records
+142*.txt
+
+# --- Model Artifacts & Logs ---
+# Ignores CatBoost temporary files and training logs
+catboost_info/
+script/catboost_info/
+
+# --- Operating System Files ---
+.DS_Store
+Thumbs.db
+
+# --- Ensemble Models (.pkl) ---
+# These are kept TRACKED so they push to AWS. 
+# WARNING: If best_cb.pkl or best_lgb.pkl are > 100MB, 
+# you must use Git LFS or move them manually.
+
+# key file
+*.pem
