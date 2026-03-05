@@ -13,7 +13,8 @@ import math
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
 
-path = '/home/leewen/code/physionet/'
+BASE_DIR = Path(__file__).resolve().parent
+path = BASE_DIR.parent
 
 def run_icu_processing(ts_file):
 
@@ -3041,6 +3042,6 @@ def run_icu_processing(ts_file):
 
   df_record['RecordID'] = df_record['RecordID'].astype(int)
   df_combined = pd.merge(left=df_record, right=df_patient, on='RecordID', how='inner')
-  #df_combined.to_csv(path+'/df_new.csv', index=False)
+  #df_combined.to_csv(path / 'df_new.csv', index=False)
   return df_combined
 

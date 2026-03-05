@@ -2,22 +2,24 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import joblib
+from pathlib import Path
 from cleaning import run_icu_processing
 
+BASE_DIR = Path(__file__).resolve().parent
+path = BASE_DIR.parent
 
 @st.cache_resource
 def load_assets():
-    path = '/home/leewen/code/physionet'
     assets = {
-        'cb': joblib.load(path+'/best_cb.pkl'),
-        'lgb': joblib.load(path+'/best_lgb.pkl'),
-        'lr': joblib.load(path+'/best_lr.pkl'),
-        'imputer': joblib.load(path+'/median_imputer.pkl'),
-        'scaler': joblib.load(path+'/standard_scalar.pkl'),
-        'feature_cb': joblib.load(path+'/feature_cb.pkl'),
-        'feature_lgb': joblib.load(path+'/feature_lgb.pkl'),
-        'feature_lr': joblib.load(path+'/feature_lr.pkl'),
-        'feature_cols': joblib.load(path+'/feature_columns.pkl')
+        'cb': joblib.load(path / 'best_cb.pkl'),
+        'lgb': joblib.load(path / 'best_lgb.pkl'),
+        'lr': joblib.load(path / 'best_lr.pkl'),
+        'imputer': joblib.load(path / 'median_imputer.pkl'),
+        'scaler': joblib.load(path / 'standard_scalar.pkl'),
+        'feature_cb': joblib.load(path / 'feature_cb.pkl'),
+        'feature_lgb': joblib.load(path / 'feature_lgb.pkl'),
+        'feature_lr': joblib.load(path / 'feature_lr.pkl'),
+        'feature_cols': joblib.load(path / 'feature_columns.pkl')
     }
     return assets
 
