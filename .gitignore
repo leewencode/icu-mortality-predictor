@@ -15,18 +15,20 @@ dist/
 wheels/
 *.egg-info
 
-# --- Machine Learning Data (The "Clean Repo" Rules) ---
-# 1. Ignore the giant raw data folder
+# --- Machine Learning Data  ---
+# 1. Ignore the data folder
 data/
 
-# 2. Ignore all CSV files (intermediate training/split data)
+# 2. Ignore csv files
 *.csv
 
-# 3. Ignore sample test data
-test_data.csv
+# 3. Ignore txt files
+.txt
 
-# 4. Ignore tiny patient records
-142*.txt
+# 4. Ignore model and output files
+.pkl
+.joblib
+.png
 
 # --- Model Artifacts & Logs ---
 # Ignores CatBoost temporary files and training logs
@@ -36,11 +38,6 @@ script/catboost_info/
 # --- Operating System Files ---
 .DS_Store
 Thumbs.db
-
-# --- Ensemble Models (.pkl) ---
-# These are kept TRACKED so they push to AWS. 
-# WARNING: If best_cb.pkl or best_lgb.pkl are > 100MB, 
-# you must use Git LFS or move them manually.
 
 # key file
 *.pem
