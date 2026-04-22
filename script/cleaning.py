@@ -41,10 +41,6 @@ def run_icu_processing(ts_file):
   df_patient.loc[df_patient['Height'] < 10, 'Height'] = np.nan
   df_patient.loc[df_patient['Height'] > 300, 'Height'] = np.nan
 
-  for i in [1, 2, 3, 4]:
-      df_patient[f'ICUType_{float(i)}'] = (df_patient['ICUType'] == i).astype(int)
-  df_patient.drop('ICUType', axis=1, inplace=True)
-
   def string_to_minute(time_string):
       h, m = map(int, time_string.split(':'))
       return h * 60 + m
