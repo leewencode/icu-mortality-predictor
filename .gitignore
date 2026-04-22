@@ -23,12 +23,12 @@ data/
 *.csv
 
 # 3. Ignore txt files
-.txt
+*.txt
 
 # 4. Ignore model and output files
-.pkl
-.joblib
-.png
+*.pkl
+*.joblib
+*.png
 
 # --- Model Artifacts & Logs ---
 # Ignores CatBoost temporary files and training logs
