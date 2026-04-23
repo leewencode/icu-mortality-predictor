@@ -625,7 +625,9 @@ imbalanced-learn==0.14.1 \
 ipykernel==7.2.0 \
     --hash=sha256:18ed160b6dee2cbb16e5f3575858bc19d8f1fe6046a9a680c708494ce31d909e \
     --hash=sha256:3bbd4420d2b3cc105cbdf3756bfc04500b1e52f090a90716851f3916c62e1661
-    # via jupyterlab
+    # via
+    #   jupyterlab
+    #   physionet
 ipython==8.38.0 ; python_full_version < '3.11' \
     --hash=sha256:750162629d800ac65bb3b543a14e7a74b0e88063eac9b92124d4b2aa3f6d8e86 \
     --hash=sha256:9cfea8c903ce0867cc2f23199ed8545eb741f3a69420bfcf3743ad1cec856d39
